@@ -18,12 +18,14 @@
         const myJson = await response.json();
         puns = myJson;
     }
+    
+    const returnRandomItem = (arr) => arr.length * Math.random() << 0
 
     const showRandomPun = ()=>{
         const keys = Object.keys(puns)
-        const topic = keys[ keys.length * Math.random() << 0];
+        const topic = keys[returnRandomItem(keys)];
         const punArr = puns[topic];
-        const punToShow = punArr[punArr.length * Math.random() << 0];
+        const punToShow = punArr[returnRandomItem(punArr)];
 
         document.getElementById('topic').innerHTML = topic.toUpperCase();
         document.getElementById('pun').innerHTML = punToShow;
